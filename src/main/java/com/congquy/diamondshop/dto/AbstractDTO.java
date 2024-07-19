@@ -1,8 +1,10 @@
 package com.congquy.diamondshop.dto;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
-public class AbstractDTO {
+public class AbstractDTO<T> {
     private Long id;
 
     private Date createdDate;
@@ -10,6 +12,16 @@ public class AbstractDTO {
 
     private String createdBy;
     private String modifiedBy;
+
+    private List<T> listResult = new ArrayList<>();
+
+    public List<T> getListResult() {
+        return listResult;
+    }
+
+    public void setListResult(List<T> listResult) {
+        this.listResult = listResult;
+    }
 
     public Long getId() {
         return id;

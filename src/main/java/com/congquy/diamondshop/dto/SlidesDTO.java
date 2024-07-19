@@ -1,7 +1,7 @@
 package com.congquy.diamondshop.dto;
 
 
-public class SlidesDTO extends AbstractDTO {
+public class SlidesDTO extends AbstractDTO<SlidesDTO> {
 
     private String image;
 

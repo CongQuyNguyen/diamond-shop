@@ -1,5 +1,6 @@
 package com.congquy.diamondshop.controller.user;
 
+import com.congquy.diamondshop.dto.SlidesDTO;
 import com.congquy.diamondshop.service.ISlidesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
