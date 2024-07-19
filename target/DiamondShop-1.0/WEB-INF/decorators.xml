@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/decorators">
+    <excludes>
+        <pattern>/api*</pattern>
+    </excludes>
+
+    <decorator name="trang-chu" page="user.jsp">
+        <pattern>/trang-chu*</pattern>
+    </decorator>
+
+    <decorator name="san-pham" page="user.jsp">
+        <pattern>/san-pham*</pattern>
+    </decorator>
+
+    <decorator name="dang-nhap" page="login.jsp">
+        <pattern>/dang-nhap*</pattern>
+    </decorator>
+
+</decorators>
