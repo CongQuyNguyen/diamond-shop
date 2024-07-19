@@ -41,4 +41,10 @@ public class ProductController {
         ModelAndView mav = new ModelAndView("/user/list-view");
         return mav;
     }
+
+    @RequestMapping(value = {"/san-pham/chi-tiet-san-pham"}, method = RequestMethod.GET)
+    public ModelAndView productDetailPage() {
+        ModelAndView mav = new ModelAndView("/user/product-detail");
+        return mav;
+    }
 }
