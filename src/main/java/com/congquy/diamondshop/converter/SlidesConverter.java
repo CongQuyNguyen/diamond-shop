@@ -13,6 +13,10 @@ public class SlidesConverter {
         slidesDTO.setDescription(slides.getDescription());
         slidesDTO.setImage(slides.getImage());
         slidesDTO.setTitle(slides.getTitle());
+        slidesDTO.setModifiedBy(slides.getModifiedBy());
+        slidesDTO.setModifiedDate(slides.getModifiedDate());
+        slidesDTO.setCreatedBy(slides.getCreatedBy());
+        slidesDTO.setCreatedDate(slides.getCreatedDate());
         return slidesDTO;
     }
 

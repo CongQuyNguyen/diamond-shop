@@ -53,7 +53,7 @@ Lower Header Section
   -->
   <div class="row">
 
-    <%@include file="/common/user/nav-left.jsp"%>
+    <%@include file="/WEB-INF/views/common-change/nav-left.jsp"%>
 
     <dec:body>
 
