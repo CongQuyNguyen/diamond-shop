@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/WEB-INF/views/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 
@@ -32,7 +32,7 @@
 	Upper Header Section
 -->
 
-<%@include file="/common/user/header-upper.jsp"%>
+<%@include file="/WEB-INF/views/common/user/header-upper.jsp"%>
 
 <!--
 Lower Header Section
@@ -40,21 +40,21 @@ Lower Header Section
 <div class="container">
   <div id="gototop"> </div>
 
-  <%@include file="/common/user/header-lower.jsp"%>
+  <%@include file="/WEB-INF/views/common/user/header-lower.jsp"%>
 
   <!--
   Navigation Bar Section
   -->
 
-  <%@include file="/common/user/nav-top.jsp"%>
+  <%@include file="/WEB-INF/views/common/user/nav-top.jsp"%>
 
   <!--
   Body Section
   -->
   <div class="row">
-
-    <%@include file="/WEB-INF/views/common-change/nav-left.jsp"%>
-
+    
+    <%@ include file="/WEB-INF/views/common/user/nav-left.jsp"%>
+    
     <dec:body>
 
     </dec:body>
@@ -64,11 +64,11 @@ Lower Header Section
   Footer
   -->
 
-  <%@include file="/common/user/footer.jsp"%>
+  <%@include file="/WEB-INF/views/common/user/footer.jsp"%>
 
 </div><!-- /container -->
 
-<%@include file="/common/user/sponsor.jsp"%>
+<%@include file="/WEB-INF/views/common/user/sponsor.jsp"%>
 
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
 <!-- Placed at the end of the document so the pages load faster -->

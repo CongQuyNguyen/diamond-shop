@@ -5,5 +5,6 @@
         <class>com.congquy.diamondshop.entity.CategoryEntity</class>
         <class>com.congquy.diamondshop.entity.ProductEntity</class>
         <class>com.congquy.diamondshop.entity.ColorsEntity</class>
+        <class>com.congquy.diamondshop.entity.MenuEntity</class>
     </persistence-unit>
 </persistence>

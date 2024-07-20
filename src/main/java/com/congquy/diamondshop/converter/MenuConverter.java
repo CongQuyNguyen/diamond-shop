@@ -2,7 +2,9 @@ package com.congquy.diamondshop.converter;
 
 import com.congquy.diamondshop.dto.MenuDTO;
 import com.congquy.diamondshop.entity.MenuEntity;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MenuConverter {
     public MenuDTO toDTO(MenuEntity menu) {
         MenuDTO menuDTO = new MenuDTO();
