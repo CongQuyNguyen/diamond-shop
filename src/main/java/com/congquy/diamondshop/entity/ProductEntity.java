@@ -13,7 +13,8 @@ public class ProductEntity extends BaseEntity {
     private CategoryEntity category;
 
     @ManyToMany()
-    @JoinTable(name = "product_colors", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "color_id"))
+    @JoinTable(name = "product_colors", joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "color_id"))
     private List<ColorsEntity> colors = new ArrayList<>();
 
     public CategoryEntity getCategory() {

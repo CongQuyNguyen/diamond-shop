@@ -10,6 +10,11 @@ import java.util.List;
 @Entity
 @Table(name = "category")
 public class CategoryEntity extends BaseEntity {
+
+    @OneToMany(mappedBy = "category")
+    private List<ProductEntity> listProduct = new ArrayList<>();
+
+
     @Column(name = "name")
     private String name;
 
@@ -24,8 +29,6 @@ public class CategoryEntity extends BaseEntity {
         this.listProduct = listProduct;
     }
 
-    @OneToMany(mappedBy = "category")
-    private List<ProductEntity> listProduct = new ArrayList<>();
 
 
     public String getCode() {

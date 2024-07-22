@@ -14,6 +14,7 @@
 </head>
 <body>
 
+<h1>${products.size()}</h1>
 
 <div class="span9">
     <div class="well np">

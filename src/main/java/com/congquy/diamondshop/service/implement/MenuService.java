@@ -5,7 +5,6 @@ import com.congquy.diamondshop.dto.MenuDTO;
 import com.congquy.diamondshop.entity.MenuEntity;
 import com.congquy.diamondshop.repository.MenuRepository;
 import com.congquy.diamondshop.service.IMenuService;
-import com.sun.org.glassfish.gmbal.InheritedAttribute;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -2,6 +2,7 @@ package com.congquy.diamondshop.controller.user;
 
 import com.congquy.diamondshop.service.ICategoryService;
 import com.congquy.diamondshop.service.IMenuService;
+import com.congquy.diamondshop.service.IProductService;
 import com.congquy.diamondshop.service.ISlidesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,8 @@ public class ProductController {
     @Autowired
     private IMenuService menuService;
 
+    @Autowired
+    private IProductService productService;
 
     @RequestMapping(value = {"/trang-chu"}, method = RequestMethod.GET)
     public ModelAndView homePage() {
@@ -30,6 +33,7 @@ public class ProductController {
         mav.addObject("slides", slidesService.getListSlides());
         mav.addObject("categories", categoryService.getCategories());
         mav.addObject("menus", menuService.getListMenu());
+        mav.addObject("products", productService.getAllProduct());
         return mav;
     }
 
