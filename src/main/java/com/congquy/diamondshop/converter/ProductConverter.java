@@ -58,9 +58,9 @@ public class ProductConverter {
             productDTO.setDescription((String) obj[9]);
             productDTO.setContent((String) obj[10]);
 
-            if(obj[11] != null && obj[12] != null && obj[13] != null) {
+            if(obj[11] != null && obj[12] != null && obj[13] != null && obj[14] != null) {
                 productDTO.setColors(new ColorsDTO((((BigInteger) obj[11]).longValue()),
-                        (String) obj[12], (String) obj[13]));
+                        (String) obj[12], (String) obj[13], (String) obj[14]));
             }
 
             productDTOList.add(productDTO);

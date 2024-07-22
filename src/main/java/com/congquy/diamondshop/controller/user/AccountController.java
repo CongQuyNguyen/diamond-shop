@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller(value = "accountControllerOfUser")
-public class AccountController {
+public class AccountController extends BaseController {
 
     @RequestMapping(value = {"/dang-nhap"}, method = RequestMethod.GET)
     public ModelAndView loginPage() {

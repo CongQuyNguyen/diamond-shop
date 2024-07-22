@@ -9,10 +9,11 @@ public class ColorsDTO extends AbstractDTO<ColorsDTO> {
 
     private String image;
 
-    public ColorsDTO(Long id, String code, String name) {
+    public ColorsDTO(Long id, String code, String name, String image) {
         super(id);
         this.name = name;
         this.code = code;
+        this.image = image;
     }
 
     public String getName() {

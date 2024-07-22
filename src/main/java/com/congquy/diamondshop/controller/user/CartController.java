@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller(value = "cartItemControllerOfUser")
-public class CartController {
+public class CartController extends BaseController {
     @RequestMapping(value = {"/dang-nhap/gio-hang"}, method = RequestMethod.GET)
     public ModelAndView homePage() {
         ModelAndView mav = new ModelAndView("user/cart-product");
