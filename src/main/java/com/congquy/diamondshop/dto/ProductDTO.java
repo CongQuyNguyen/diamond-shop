@@ -22,6 +22,16 @@ public class ProductDTO extends AbstractDTO<ProductDTO> {
 
     private String content;
 
+    private ColorsDTO colors;
+
+    public ColorsDTO getColors() {
+        return colors;
+    }
+
+    public void setColors(ColorsDTO colors) {
+        this.colors = colors;
+    }
+
     public Long getCategoryId() {
         return categoryId;
     }

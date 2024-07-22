@@ -7,6 +7,12 @@ import java.util.List;
 public class AbstractDTO<T> {
     private Long id;
 
+    public AbstractDTO(Long id) {
+        this.id = id;
+    }
+
+    public AbstractDTO() {}
+
     private Date createdDate;
     private Date modifiedDate;
 

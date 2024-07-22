@@ -9,13 +9,14 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
 
     // Sử dụng native query
-//    @Query( value = "'SELECT p.id AS id_product, p.category.id, p.size, p.sale, " +
-//            "p.quantity, p.price, p.newProduct, p.name, p.highlight, p.content, p.description," +
-//            "c.name AS name_color, c.code AS code_color, c.id AS id_color " +
-//            "FROM product AS p " +
-//            "INNER JOIN colors AS c " +
-//            "ON p.id = c.id GROUP BY p.id, c.id'", nativeQuery = true)
-
-    @Query(value = "'select * from product'", nativeQuery = true)
+    @Query( value = "SELECT p.id AS id_product, p.category_id, p.size, p.quantity, " +
+            "p.sale, p.price, p.new_product, p.name, p.highlight, p.description, p.content, " +
+            "c.id AS id_color, c.name AS name_color, c.code AS code_color " +
+            "FROM product AS p " +
+            "INNER JOIN colors AS c " +
+            "ON p.id = c.id GROUP BY p.id, c.id", nativeQuery = true)
     List<Object[]> getAllProduct();
+
+//    @Query(value = "select id, category_id, size, quantity, sale, price, new_product, name, highlight, description from product", nativeQuery = true)
+//    List<Object[]> getAllProduct();
 }

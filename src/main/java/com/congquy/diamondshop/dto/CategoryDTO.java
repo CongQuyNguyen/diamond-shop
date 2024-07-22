@@ -6,6 +6,7 @@ public class CategoryDTO extends AbstractDTO<CategoryDTO> {
 
     private String code;
 
+
     public String getName() {
         return name;
     }

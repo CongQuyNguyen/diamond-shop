@@ -1,9 +1,11 @@
 package com.congquy.diamondshop.converter;
 
+import com.congquy.diamondshop.dto.ColorsDTO;
 import com.congquy.diamondshop.dto.ProductDTO;
 import com.congquy.diamondshop.entity.ProductEntity;
 import org.springframework.stereotype.Component;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -44,21 +46,22 @@ public class ProductConverter {
         for (Object[] obj : results) {
             ProductDTO productDTO = new ProductDTO();
 
-            productDTO.setCategoryId(((Long) obj[1])); // categoryId
-            productDTO.setName((String) obj[7]); // name
-            productDTO.setPrice((Double) obj[5]); // price
-            productDTO.setSize((String) obj[2]); // size
-            productDTO.setHighlight((Integer) obj[8]); // highlight
-            productDTO.setNewProduct((Integer) obj[6]); // newProduct
-            productDTO.setSale((Integer) obj[4]); // sale
-            productDTO.setQuantity((Integer) obj[3]); // quantity
-            productDTO.setDescription((String) obj[9]); // description
+            productDTO.setId(((BigInteger) obj[0]).longValue());
+            productDTO.setCategoryId(((BigInteger) obj[1]).longValue());
+            productDTO.setSize((String) obj[2]);
+            productDTO.setQuantity((Integer) obj[3]);
+            productDTO.setSale((Integer) obj[4]);
+            productDTO.setPrice((Double) obj[5]);
+            productDTO.setNewProduct((Integer) obj[6]);
+            productDTO.setName((String) obj[7]);
+            productDTO.setHighlight((Integer) obj[8]);
+            productDTO.setDescription((String) obj[9]);
+            productDTO.setContent((String) obj[10]);
 
-            productDTO.setId((Long) obj[0]);
-            productDTO.setCreatedBy((String) obj[10]);
-            productDTO.setCreatedDate((Date) obj[11]);
-            productDTO.setModifiedBy((String) obj[12]);
-            productDTO.setModifiedDate((Date) obj[13]);
+            if(obj[11] != null && obj[12] != null && obj[13] != null) {
+                productDTO.setColors(new ColorsDTO((((BigInteger) obj[11]).longValue()),
+                        (String) obj[12], (String) obj[13]));
+            }
 
             productDTOList.add(productDTO);
         }
