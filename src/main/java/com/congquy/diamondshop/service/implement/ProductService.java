@@ -33,4 +33,10 @@ public class ProductService implements IProductService {
         List<ProductDTO> result = productConverter.toDTO(objs);
         return result;
     }
+
+    @Override
+    public List<ProductDTO> getProductByCategory(Long id) {
+        List<Object[]> entities = productRepository.findAllByCategory(id);
+        return productConverter.toDTO(entities);
+    }
 }

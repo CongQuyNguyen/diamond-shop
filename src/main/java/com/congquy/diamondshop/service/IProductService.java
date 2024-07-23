@@ -8,4 +8,6 @@ public interface IProductService {
     List<ProductDTO> getProductByNewProduct(int newProduct);
 
     List<ProductDTO> getProductByHighlightProduct(int highlight);
+
+    List<ProductDTO> getProductByCategory(Long id);
 }

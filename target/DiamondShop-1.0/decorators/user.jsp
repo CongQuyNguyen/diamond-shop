@@ -26,6 +26,10 @@
 
   <!-- Favicons -->
   <link rel="shortcut icon" href="<c:url value="/template/assets/ico/favicon.ico"/>">
+
+  <%-- Style pagination--%>
+  <link href="<c:url value="/template/user/pagination.css"/>" rel="stylesheet"/>
+
 </head>
 <body>
 <!--
@@ -77,5 +81,6 @@ Lower Header Section
 <script src="<c:url value="/template/assets/js/jquery.easing-1.3.min.js"/>"></script>
 <script src="<c:url value="/template/assets/js/jquery.scrollTo-1.4.3.1-min.js"/>"></script>
 <script src="<c:url value="/template/assets/js/shop.js"/>"></script>
+
 </body>
 </html>

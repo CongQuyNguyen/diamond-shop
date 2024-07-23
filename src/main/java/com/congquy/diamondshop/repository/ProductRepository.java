@@ -34,4 +34,15 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
             "ORDER BY RAND() " +
             "LIMIT 12", nativeQuery = true)
     List<Object[]> getProductByNew(@Param("newProduct") int newProduct);
+
+    @Query( value = "SELECT p.id AS id_product, p.category_id, p.size, p.quantity, " +
+            "p.sale, p.price, p.new_product, p.name, p.highlight, p.description, p.content, " +
+            "c.id AS id_color, c.name AS name_color, c.code AS code_color, c.image " +
+            "FROM product AS p " +
+            "INNER JOIN colors AS c " +
+            "ON p.id = c.id " +
+            "WHERE p.category_id = :categoryId " +
+            "GROUP BY p.id, c.id " +
+            "ORDER BY RAND() ", nativeQuery = true)
+    List<Object[]> findAllByCategory(@Param("categoryId") Long categoryId);
 }
