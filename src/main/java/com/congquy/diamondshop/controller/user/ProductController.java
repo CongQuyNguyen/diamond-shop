@@ -1,5 +1,8 @@
 package com.congquy.diamondshop.controller.user;
 
+import com.congquy.diamondshop.constant.SystemConstant;
+import com.congquy.diamondshop.service.IProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,14 +12,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller(value = "productControllerOfUser")
 public class ProductController extends BaseController {
 
-
     @RequestMapping(value = {"/trang-chu"}, method = RequestMethod.GET)
     public ModelAndView homePage() {
         ModelAndView mav = init();
         mav.setViewName("user/home-page");
 
-        mav.addObject("slides", _slidesService.getListSlides());
-        mav.addObject("products", _productService.getAllProduct());
+        mav.addObject("productsNew", _productService.getProductByNewProduct(SystemConstant.NEW_PRODUCT));
+        mav.addObject("productsHighlight", _productService.getProductByHighlightProduct(SystemConstant.HIGHLIGHT_PRODUCT));
         return mav;
     }
 

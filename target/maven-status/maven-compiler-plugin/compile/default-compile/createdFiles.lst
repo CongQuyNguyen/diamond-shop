@@ -1,3 +1,4 @@
+com\congquy\diamondshop\converter\ColorsConverter.class
 com\congquy\diamondshop\converter\ProductConverter.class
 com\congquy\diamondshop\dto\CategoryDTO.class
 com\congquy\diamondshop\entity\BaseEntity.class
@@ -22,11 +23,13 @@ com\congquy\diamondshop\service\IMenuService.class
 com\congquy\diamondshop\service\implement\CategoryService.class
 com\congquy\diamondshop\service\implement\SlidesService.class
 com\congquy\diamondshop\converter\CategoryConverter.class
+com\congquy\diamondshop\dto\ColorsDTO.class
 com\congquy\diamondshop\service\implement\ProductService.class
 com\congquy\diamondshop\service\implement\MenuService.class
 com\congquy\diamondshop\dto\MenuDTO.class
 com\congquy\diamondshop\service\ICategoryService.class
 com\congquy\diamondshop\constant\SystemConstant.class
+com\congquy\diamondshop\controller\user\BaseController.class
 com\congquy\diamondshop\repository\MenuRepository.class
 com\congquy\diamondshop\entity\SlidesEntity.class
 com\congquy\diamondshop\config\JPAConfig.class

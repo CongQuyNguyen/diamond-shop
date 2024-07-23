@@ -32,6 +32,7 @@ public class BaseController {
 
     @PostConstruct
     public ModelAndView init() {
+        _mavShare.addObject("slides", _slidesService.getListSlides());
         _mavShare.addObject("categories", _categoryService.getCategories());
         _mavShare.addObject("menus", _menuService.getListMenu());
         return _mavShare;

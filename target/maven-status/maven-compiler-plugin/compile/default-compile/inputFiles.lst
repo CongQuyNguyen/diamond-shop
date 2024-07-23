@@ -6,6 +6,7 @@ D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\config\JPAConfig.j
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\controller\user\AccountController.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\IMenuService.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\dto\CategoryDTO.java
+D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\converter\ColorsConverter.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\dto\SlidesDTO.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\MenuEntity.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\converter\ProductConverter.java
@@ -17,10 +18,12 @@ D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\constant\SystemCon
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\ColorsEntity.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\controller\user\CartController.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\implement\ProductService.java
+D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\controller\user\BaseController.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\converter\CategoryConverter.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\converter\MenuConverter.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\dto\MenuDTO.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\ProductEntity.java
+D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\dto\ColorsDTO.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\BaseEntity.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\IProductService.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\controller\admin\ProductController.java

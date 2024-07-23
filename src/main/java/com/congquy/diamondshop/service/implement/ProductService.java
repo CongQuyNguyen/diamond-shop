@@ -21,14 +21,15 @@ public class ProductService implements IProductService {
     private ProductConverter productConverter;
 
     @Override
-    public List<ProductDTO> getAllProduct() {
-//        List<ProductEntity> entities = productRepository.findAll();
-//        List<ProductDTO> result = new ArrayList<>();
-//        for(ProductEntity item : entities) {
-//            result.add(productConverter.toDTO(item));
-//        }
-//        return result;
-        List<Object[]> objs = productRepository.getAllProduct();
+    public List<ProductDTO> getProductByNewProduct(int newProduct) {
+        List<Object[]> objs = productRepository.getProductByNew(newProduct);
+        List<ProductDTO> result = productConverter.toDTO(objs);
+        return result;
+    }
+
+    @Override
+    public List<ProductDTO> getProductByHighlightProduct(int highlight) {
+        List<Object[]> objs = productRepository.getProductByHighlight(highlight);
         List<ProductDTO> result = productConverter.toDTO(objs);
         return result;
     }
