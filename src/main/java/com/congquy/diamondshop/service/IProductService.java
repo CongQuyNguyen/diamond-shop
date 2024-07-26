@@ -10,4 +10,6 @@ public interface IProductService {
     List<ProductDTO> getProductByHighlightProduct(int highlight);
 
     List<ProductDTO> getProductByCategory(Long id);
+
+    List<ProductDTO> getProductByPagination(int start, int totalPage, Long id);
 }

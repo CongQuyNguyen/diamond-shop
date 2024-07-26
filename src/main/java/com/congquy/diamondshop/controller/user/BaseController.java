@@ -24,9 +24,6 @@ public class BaseController {
     @Autowired
     public ICategoryService _categoryService;
 
-    @Autowired
-    public IProductService _productService;
-
     public ModelAndView _mavShare = new ModelAndView();
 
 

@@ -15,7 +15,7 @@
   <div class="well well-small">
     <ul class="nav nav-list">
       <c:forEach var="item" items="${categories}" varStatus="index">
-        <li><a href="<c:url value="/san-pham/danh-sach-grid/${item.id}"/>"><i class="icon-circle-blank"></i>  ${item.name}</a></li>
+        <li><a href="<c:url value="/san-pham/danh-sach-grid/${item.id}/1"/>"><i class="icon-circle-blank"></i>  ${item.name}</a></li>
       </c:forEach>
 
       <li style="border:0"> &nbsp;</li>

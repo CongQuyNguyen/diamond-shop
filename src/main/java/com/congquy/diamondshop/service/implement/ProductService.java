@@ -22,14 +22,14 @@ public class ProductService implements IProductService {
 
     @Override
     public List<ProductDTO> getProductByNewProduct(int newProduct) {
-        List<Object[]> objs = productRepository.getProductByNew(newProduct);
+        List<Object[]> objs = productRepository.findAllByNew(newProduct);
         List<ProductDTO> result = productConverter.toDTO(objs);
         return result;
     }
 
     @Override
     public List<ProductDTO> getProductByHighlightProduct(int highlight) {
-        List<Object[]> objs = productRepository.getProductByHighlight(highlight);
+        List<Object[]> objs = productRepository.findAllByHighlight(highlight);
         List<ProductDTO> result = productConverter.toDTO(objs);
         return result;
     }
@@ -37,6 +37,12 @@ public class ProductService implements IProductService {
     @Override
     public List<ProductDTO> getProductByCategory(Long id) {
         List<Object[]> entities = productRepository.findAllByCategory(id);
+        return productConverter.toDTO(entities);
+    }
+
+    @Override
+    public List<ProductDTO> getProductByPagination(int start, int totalProductInPage, Long id) {
+        List<Object[]> entities = productRepository.findAllByPagination(start, totalProductInPage, id);
         return productConverter.toDTO(entities);
     }
 }

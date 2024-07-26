@@ -28,7 +28,10 @@
   <link rel="shortcut icon" href="<c:url value="/template/assets/ico/favicon.ico"/>">
 
   <%-- Style pagination--%>
-  <link href="<c:url value="/template/user/pagination.css"/>" rel="stylesheet"/>
+  <%--<link href="<c:url value="/template/user/pagination.css"/>" rel="stylesheet"/>--%>
+  <dec:head>
+
+  </dec:head>
 
 </head>
 <body>
