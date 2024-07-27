@@ -45,4 +45,9 @@ public class ProductService implements IProductService {
         List<Object[]> entities = productRepository.findAllByPagination(start, totalProductInPage, id);
         return productConverter.toDTO(entities);
     }
+
+    @Override
+    public ProductDTO getProductById(Long id) {
+        return productConverter.toDTO(productRepository.findOne(id));
+    }
 }

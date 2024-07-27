@@ -31,7 +31,8 @@ public class CategoryController extends BaseController {
                 SystemConstant.LIMIT_ITEM_IN_PAGE, Integer.parseInt(currentPage));
         _mavShare.addObject("idPaginate", id);
         _mavShare.addObject("paginateDTO", paginateDTO);
-        _mavShare.addObject("productsPagination", productService.getProductByPagination(paginateDTO.getStart() - 1, SystemConstant.LIMIT_ITEM_IN_PAGE, Long.parseLong(id)));
+        _mavShare.addObject("productsPagination", productService.getProductByPagination(paginateDTO.getStart() - 1
+                , SystemConstant.LIMIT_ITEM_IN_PAGE, Long.parseLong(id)));
         return _mavShare;
     }
 }

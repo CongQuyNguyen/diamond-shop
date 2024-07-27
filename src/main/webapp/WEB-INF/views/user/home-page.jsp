@@ -42,7 +42,7 @@
     New Products
     -->
     <div class="well well-small">
-        <h3>Sản phẩm mới </h3>
+        <h3>Sản phẩm mớii</h3>
         <hr class="soften"/>
         <div class="row-fluid">
             <div id="newProductCar" class="carousel slide">
@@ -53,9 +53,9 @@
                             <c:forEach var="item" items="${productsNew}" varStatus="loop">
                             <li class="span3">
                                 <div class="thumbnail">
-                                    <a class="zoomTool" href="san-pham/chi-tiet-san-pham/${item.id}"
+                                    <a class="zoomTool" href="<c:url value="san-pham/chi-tiet-san-pham-${item.id}"/>"
                                        title="add to cart"><span class="icon-search"></span>
-                                        Xem nhanh</a> <a href="product_details.html"><img
+                                        Xem nhanh</a> <a href="<c:url value="san-pham/chi-tiet-san-pham-${item.id}"/>"><img
                                         src="<c:url value="/template/assets/img/${item.colors.image}"/>" alt=""></a>
                                 </div>
                             </li>
@@ -92,13 +92,13 @@
                         <div class="thumbnail">
                             <a class="zoomTool" href="#" title="add to cart">
                                 <span class="icon-search"></span> Xem nhanh</a>
-                            <a href="san-pham/chi-tiet-san-pham/${item.id}"><img
+                            <a href="<c:url value="san-pham/chi-tiet-san-pham-${item.id}"/> "><img
                                 src="<c:url value="/template/assets/img/${item.colors.image}"/>"
                                 alt=""></a>
                             <div class="caption">
                                 <h5>${item.name}</h5>
                                 <h4>
-                                    <a class="defaultBtn" href="product_details.html"
+                                    <a class="defaultBtn" href="<c:url value="san-pham/chi-tiet-san-pham-${item.id}"/>"
                                        title="Click to view"><span class="icon-zoom-in"></span></a> <a
                                         class="shopBtn" href="#" title="add to cart"><span
                                         class="icon-plus"></span></a> <span class="pull-right">$ ${item.price}</span>
