@@ -131,3 +131,13 @@
 </div>
 </body>
 </html>
+
+<%--
+    Chức năng giỏ hàng:
+    - Thông tin 1: Thông tin của sản phẩm
+    - Thông tin 2: Số lượng sản phẩm muốn mua
+    - Thông tin 3: Total price tính toán được
+    => Có danh sách các sản phẩm theo 3 thông tin trên
+
+    Cho nen cần một đối tươn chứa 3 thông tin chính này (tạo trong DTO)
+--%>

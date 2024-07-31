@@ -56,7 +56,7 @@
                                     <a class="zoomTool" href="<c:url value="san-pham/chi-tiet-san-pham-${item.id}"/>"
                                        title="add to cart"><span class="icon-search"></span>
                                         Xem nhanh</a> <a href="<c:url value="san-pham/chi-tiet-san-pham-${item.id}"/>"><img
-                                        src="<c:url value="/template/assets/img/${item.colors.image}"/>" alt=""></a>
+                                        src="<c:url value="/template/assets/img/${item.colors.get(0).image}"/>" alt=""></a>
                                 </div>
                             </li>
                             <c:if test="${(loop.index + 1) % 4 == 0 || (loop.index + 1)  == productsNew.size()}">
@@ -93,7 +93,7 @@
                             <a class="zoomTool" href="#" title="add to cart">
                                 <span class="icon-search"></span> Xem nhanh</a>
                             <a href="<c:url value="san-pham/chi-tiet-san-pham-${item.id}"/> "><img
-                                src="<c:url value="/template/assets/img/${item.colors.image}"/>"
+                                src="<c:url value="/template/assets/img/${item.colors.get(0).image}"/>"
                                 alt=""></a>
                             <div class="caption">
                                 <h5>${item.name}</h5>

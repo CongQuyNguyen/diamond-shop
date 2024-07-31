@@ -59,7 +59,7 @@
                     <div class="thumbnail">
                         <a href="<c:url value="/san-pham/chi-tiet-san-pham-${item.id}"/>" class="overlay"></a>
                         <a class="zoomTool" href="<c:url value="/san-pham/chi-tiet-san-pham-${item.id}"/>" title="add to cart"><span class="icon-search"></span> Xem nhanh</a>
-                        <a href="<c:url value="/san-pham/chi-tiet-san-pham-${item.id}"/>"><img src="<c:url value="/template/assets/img/${item.colors.image}"/>" alt=""></a>
+                        <a href="<c:url value="/san-pham/chi-tiet-san-pham-${item.id}"/>"><img src="<c:url value="/template/assets/img/${item.colors.get(0).image}"/>" alt=""></a>
                         <div class="caption cntr">
                             <p>${item.name}</p>
                             <p><strong> $${item.price}</strong></p>

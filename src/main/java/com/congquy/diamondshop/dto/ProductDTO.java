@@ -1,5 +1,7 @@
 package com.congquy.diamondshop.dto;
 
+import java.util.List;
+
 public class ProductDTO extends AbstractDTO<ProductDTO> {
 
     private Long categoryId;
@@ -22,13 +24,14 @@ public class ProductDTO extends AbstractDTO<ProductDTO> {
 
     private String content;
 
-    private ColorsDTO colors;
+    private List<ColorsDTO> colors;
 
-    public ColorsDTO getColors() {
+
+    public List<ColorsDTO> getColors() {
         return colors;
     }
 
-    public void setColors(ColorsDTO colors) {
+    public void setColors(List<ColorsDTO> colors) {
         this.colors = colors;
     }
 

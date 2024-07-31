@@ -16,6 +16,8 @@ public class ColorsDTO extends AbstractDTO<ColorsDTO> {
         this.image = image;
     }
 
+    public ColorsDTO() {}
+
     public String getName() {
         return name;
     }

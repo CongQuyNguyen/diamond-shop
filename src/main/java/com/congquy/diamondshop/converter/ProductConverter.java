@@ -2,7 +2,9 @@ package com.congquy.diamondshop.converter;
 
 import com.congquy.diamondshop.dto.ColorsDTO;
 import com.congquy.diamondshop.dto.ProductDTO;
+import com.congquy.diamondshop.entity.ColorsEntity;
 import com.congquy.diamondshop.entity.ProductEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.math.BigInteger;
@@ -14,11 +16,19 @@ import java.util.stream.Collectors;
 @Component
 public class ProductConverter {
 
+    @Autowired
+    private ColorsConverter colorsConverter;
+
     public ProductDTO toDTO(ProductEntity product) {
         ProductDTO productDTO = new ProductDTO();
 
-        if (product.getCategory() != null) {
+        if(product.getCategory() != null) {
             productDTO.setCategoryId(product.getCategory().getId());
+        }
+
+        // Sẽ lấy ra được 1 list colors entity do 1 sản có nhiều màu
+        if(product.getColors() != null) {
+            productDTO.setColors(colorsConverter.toDTO(product.getColors()));
         }
 
         productDTO.setName(product.getName());
@@ -59,8 +69,10 @@ public class ProductConverter {
             productDTO.setContent((String) obj[10]);
 
             if(obj[11] != null && obj[12] != null && obj[13] != null && obj[14] != null) {
-                productDTO.setColors(new ColorsDTO((((BigInteger) obj[11]).longValue()),
+                List<ColorsDTO> colors = new ArrayList<>();
+                colors.add(new ColorsDTO((((BigInteger) obj[11]).longValue()),
                         (String) obj[12], (String) obj[13], (String) obj[14]));
+                productDTO.setColors(colors);
             }
 
             productDTOList.add(productDTO);
