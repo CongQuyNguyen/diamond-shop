@@ -12,122 +12,81 @@
     <title>Cart product</title>
 </head>
 <body>
-<div class="span12">
+<div class="span9">
     <ul class="breadcrumb">
         <li><a href="index.html">Home</a> <span class="divider">/</span></li>
         <li class="active">Check Out</li>
     </ul>
     <div class="well well-small">
-        <h1>Check Out <small class="pull-right"> 2 Items are in the cart </small></h1>
+        <h3>Thông tin giỏ hàng <small class="pull-right"> ${cart.size()} sản phẩm </small></h3>
         <hr class="soften"/>
 
         <table class="table table-bordered table-condensed">
             <thead>
             <tr>
-                <th>Product</th>
-                <th>Description</th>
-                <th>	Ref. </th>
-                <th>Avail.</th>
-                <th>Unit price</th>
-                <th>Qty </th>
-                <th>Total</th>
+                <th>Sản phẩm</th>
+                <th>Thông tin</th>
+                <th>Chọn</th>
+                <th>Mức giá</th>
+                <th>Số lượng</th>
+                <th>Tổng</th>
             </tr>
             </thead>
             <tbody>
+            <c:forEach var="item" items="${cart}" varStatus="loop">
+                <tr>
+                    <td><img width="100" src="<c:url value="/template/assets/img/${item.value.productDetail.colors.get(0).image}"/>" alt=""></td>
+                    <td>Items name here<br>Carate : 22<br>Model : n/a</td>
+                    <td><span class="shopBtn"><span class="icon-ok"></span></span> </td>
+                    <td>$${item.value.productDetail.price}</td>
+                    <td>
+                        <input class="span1" style="max-width:28px" placeholder="2" id="quantityCart${item.value.productDetail.id}" size="14" type="text" value="${item.value.quantity}">
+                        <div class="input-append">
+                            <button data-id="${item.key}" class="btn btn-mini btn-success btnUpdate" type="button"><span class="icon-edit"></span></button>
+                            <a class="btn btn-mini btn-danger" type="button" href="<c:url value="/xoa-gio-hang/${item.value.productDetail.id}"/>"><span class="icon-remove"></span></a>
+                        </div>
+                    </td>
+                    <td>$${item.value.totalPrice}</td>
+                </tr>
+            </c:forEach>
             <tr>
-                <td><img width="100" src="<c:url value="/template/assets/img/e.jpg"/>" alt=""></td>
-                <td>Items name here<br>Carate : 22<br>Model : n/a</td>
-                <td> - </td>
-                <td><span class="shopBtn"><span class="icon-ok"></span></span> </td>
-                <td>$50.00</td>
-                <td>
-                    <input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text" value="2">
-                    <div class="input-append">
-                        <button class="btn btn-mini" type="button">-</button><button class="btn btn-mini" type="button"> + </button><button class="btn btn-mini btn-danger" type="button"><span class="icon-remove"></span></button>
-                    </div>
-                </td>
-                <td>$100.00</td>
-            </tr>
-            <tr>
-                <td><img width="100" src="assets/img/f.jpg" alt=""></td>
-                <td>Item names and brief details<br>Carate:24 <br>Model:HBK24</td>
-                <td> - </td>
-                <td><span class="shopBtn"><span class="icon-ok"></span></span> </td>
-                <td>$348.42</td>
-                <td>
-                    <input class="span1" style="max-width:34px" placeholder="1" size="16" type="text">
-                    <div class="input-append">
-                        <button class="btn btn-mini" type="button">-</button><button class="btn btn-mini" type="button">+</button><button class="btn btn-mini btn-danger" type="button"><span class="icon-remove"></span></button>
-                    </div>
-                </td>
-                <td>$348.42</td>
-            </tr>
-            <tr>
-                <td colspan="6" class="alignR">Total products:	</td>
-                <td> $448.42</td>
-            </tr>
-            <tr>
-                <td colspan="6" class="alignR">Total products:	</td>
-                <td> $448.42</td>
-            </tr>
-            <tr>
-                <td colspan="6" class="alignR">Total products:	</td>
-                <td> $448.42</td>
-            </tr>
-            <tr>
-                <td colspan="6" class="alignR">Total products:	</td>
-                <td class="label label-primary"> $448.42</td>
+                <td colspan="6" class="alignR">Tổng giá trị:	</td>
+                <td class="label label-primary"> $${totalPrice}</td>
             </tr>
             </tbody>
         </table><br/>
 
-
-        <table class="table table-bordered">
-            <tbody>
-            <tr>
-                <td>
-                    <form class="form-inline">
-                        <label style="min-width:159px"> VOUCHERS Code: </label>
-                        <input type="text" class="input-medium" placeholder="CODE">
-                        <button type="submit" class="shopBtn"> ADD</button>
-                    </form>
-                </td>
-            </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-bordered">
-            <tbody>
-            <tr><td>ESTIMATE YOUR SHIPPING & TAXES</td></tr>
-            <tr>
-                <td>
-                    <form class="form-horizontal">
-                        <div class="control-group">
-                            <label class="span2 control-label" for="inputEmail">Country</label>
-                            <div class="controls">
-                                <input type="text" placeholder="Country">
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="span2 control-label" for="inputPassword">Post Code/ Zipcode</label>
-                            <div class="controls">
-                                <input type="password" placeholder="Password">
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <div class="controls">
-                                <button type="submit" class="shopBtn">Click to check the price</button>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-        <a href="products.html" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-        <a href="login.html" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
+        <a href="products.html" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Tiếp tục mua sắm </a>
+        <a href="login.html" class="shopBtn btn-large pull-right">Thanh toán <span class="icon-arrow-right"></span></a>
 
     </div>
 </div>
+<content tag="script">
+    <script>
+        $(".btnUpdate").on("click", function () {
+            var id = $(this).data("id");
+            var quantity = $("#quantityCart" + id).val();
+            alert(quantity);
+            window.location = "/sua-gio-hang/" + id + "/" + quantity;
+        });
+    </script>
+</content>
 </body>
 </html>
+
+<%--
+    Chức năng giỏ hàng:
+    - Thông tin 1: Thông tin của sản phẩm
+    - Thông tin 2: Số lượng sản phẩm muốn mua
+    - Thông tin 3: Total price tính toán được
+    => Có danh sách các sản phẩm theo 3 thông tin trên
+    Cho nen cần một đối tươn chứa 3 thông tin chính này (tạo trong DTO)
+
+    Can thêm một class xử lý logic khi thực hiện thêm xóa hoặc sửa trong giỏ hàng
+    => Thêm trong service
+
+    Xây dựng một cấu trúc session lưu lại những sản phẩm mà ng dùng đã click chọn
+    nhưng chưa thanh toán trong một khoản thời gian nhất định do chúng ta tự thiết lập
+
+
+--%>

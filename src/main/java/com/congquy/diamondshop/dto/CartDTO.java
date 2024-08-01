@@ -8,6 +8,15 @@ public class CartDTO {
 
     private double totalPrice;
 
+    public CartDTO() {
+    }
+
+    public CartDTO(ProductDTO productDetail, int quantity, double totalPrice) {
+        this.productDetail = productDetail;
+        this.quantity = quantity;
+        this.totalPrice = totalPrice;
+    }
+
     public ProductDTO getProductDetail() {
         return productDetail;
     }

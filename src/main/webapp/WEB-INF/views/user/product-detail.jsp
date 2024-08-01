@@ -23,15 +23,11 @@
             <div class="span5">
                 <div id="myCarousel" class="carousel slide cntr">
                     <div class="carousel-inner">
-<%--                        <div class="item active">
-                            <a href="#"> <img src="<c:url value="/template/assets/img/${productDetail.colors.image}"/>" alt="" style="width:100%"></a>
-                        </div>
-                        <div class="item">
-                            <a href="#"> <img src="<c:url value="/template/assets/img/b.jpg"/>" alt="" style="width:100%"></a>
-                        </div>--%>
-                        <div class="item">
-                            <a href="#"> <img src="<c:url value="/template/assets/img/${productDetail.colors.get(0).image}"/>" alt="" style="width:100%"></a>
-                        </div>
+                        <c:forEach var="item" items="${productDetail.colors}" varStatus="loop">
+                            <div class="item active">
+                                <a href="#"> <img src="<c:url value="/template/assets/img/${item.image}"/>" alt="" style="width:100%"></a>
+                            </div>
+                        </c:forEach>
                     </div>
                     <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
                     <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
@@ -41,7 +37,7 @@
                 <h3>${productDetail.name} - [${productDetail.price}]</h3>
                 <hr class="soft"/>
 
-                <form class="form-horizontal qtyFrm">
+                <form class="form-horizontal qtyFrm" method="get" action="<c:url value="/them-gio-hang/${productDetail.id}"/>">
                     <div class="control-group">
                         <label class="control-label"><span>Số lượng</span></label>
                         <div class="controls">

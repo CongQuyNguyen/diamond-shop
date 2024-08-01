@@ -54,7 +54,7 @@
                             <li class="span3">
                                 <div class="thumbnail">
                                     <a class="zoomTool" href="<c:url value="san-pham/chi-tiet-san-pham-${item.id}"/>"
-                                       title="add to cart"><span class="icon-search"></span>
+                                       title="Xem chi tiết"><span class="icon-search"></span>
                                         Xem nhanh</a> <a href="<c:url value="san-pham/chi-tiet-san-pham-${item.id}"/>"><img
                                         src="<c:url value="/template/assets/img/${item.colors.get(0).image}"/>" alt=""></a>
                                 </div>
@@ -90,7 +90,8 @@
                     <c:forEach var="item" items="${productsHighlight}" varStatus="loop">
                     <li class="span4">
                         <div class="thumbnail">
-                            <a class="zoomTool" href="#" title="add to cart">
+                            <a class="zoomTool" href="<c:url value="san-pham/chi-tiet-san-pham-${item.id}"/> "
+                               title="Xem chi tiết">
                                 <span class="icon-search"></span> Xem nhanh</a>
                             <a href="<c:url value="san-pham/chi-tiet-san-pham-${item.id}"/> "><img
                                 src="<c:url value="/template/assets/img/${item.colors.get(0).image}"/>"
@@ -99,9 +100,9 @@
                                 <h5>${item.name}</h5>
                                 <h4>
                                     <a class="defaultBtn" href="<c:url value="san-pham/chi-tiet-san-pham-${item.id}"/>"
-                                       title="Click to view"><span class="icon-zoom-in"></span></a> <a
-                                        class="shopBtn" href="#" title="add to cart"><span
-                                        class="icon-plus"></span></a> <span class="pull-right">$ ${item.price}</span>
+                                       title="Xem chi tiết"><span class="icon-zoom-in"></span></a>
+                                    <a class="shopBtn" href="<c:url value="/them-gio-hang/${item.id}"/>"
+                                       title="Thêm vào giỏ"><span class="icon-plus"></span></a> <span class="pull-right">$ ${item.price}</span>
                                 </h4>
                             </div>
                         </div>

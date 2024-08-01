@@ -19,7 +19,7 @@
       </c:forEach>
 
       <li style="border:0"> &nbsp;</li>
-      <li> <a class="totalInCart" href="cart.html"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
+      <li> <a class="totalInCart" href="cart.html"><strong>Tồng số đã mua  <span class="badge badge-warning pull-right" style="line-height:18px;">$${totalPrice}</span></strong></a></li>
     </ul>
   </div>
 

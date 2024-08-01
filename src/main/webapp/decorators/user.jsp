@@ -85,5 +85,7 @@ Lower Header Section
 <script src="<c:url value="/template/assets/js/jquery.scrollTo-1.4.3.1-min.js"/>"></script>
 <script src="<c:url value="/template/assets/js/shop.js"/>"></script>
 
+<dec:getProperty property="page.script"></dec:getProperty>
+
 </body>
 </html>

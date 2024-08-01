@@ -28,7 +28,7 @@
                 <a href="#"><span class="icon-user"></span> My Account</a>
                 <a href="register.html"><span class="icon-edit"></span> Free Register</a>
                 <a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-                <a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
+                <a href="<c:url value="/trang-chu/gio-hang"/> "><span class="icon-shopping-cart"></span> ${cart.size()} Sản phẩm - <span class="badge badge-warning"> $${totalPrice}</span></a>
             </div>
         </div>
     </div>
