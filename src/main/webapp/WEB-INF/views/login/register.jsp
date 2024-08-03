@@ -98,43 +98,6 @@
             </div>
         </form>
     </div>
-
-    <div class="well">
-        <form class="form-horizontal" >
-            <h3>Your Billing Details</h3>
-            <div class="control-group">
-                <label class="control-label">Fiels label <sup>*</sup></label>
-                <div class="controls">
-                    <input type="text" placeholder=" Field name">
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label">Fiels label <sup>*</sup></label>
-                <div class="controls">
-                    <input type="text" placeholder=" Field name">
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label">Fiels label <sup>*</sup></label>
-                <div class="controls">
-                    <input type="text" placeholder=" Field name">
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label">Fiels label <sup>*</sup></label>
-                <div class="controls">
-                    <textarea></textarea>
-                </div>
-            </div>
-            <div class="control-group">
-                <div class="controls">
-                    <input type="submit" name="submitAccount" value="Register" class="shopBtn exclusive">
-                </div>
-            </div>
-        </form>
-    </div>
-
-
 </div>
 </body>
 </html>

@@ -43,5 +43,4 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
             "GROUP BY p.id, c.id " +
             "LIMIT :start, :totalProductInPage", nativeQuery = true)
     List<Object[]> findAllByPagination(@Param("start") int start, @Param("totalProductInPage") int totalProductInPage, @Param("categoryId") Long categoryId);
-
 }

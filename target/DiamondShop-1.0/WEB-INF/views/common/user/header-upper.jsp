@@ -26,7 +26,7 @@
                 </div>
                 <a class="active" href="index.html"> <span class="icon-home"></span> Home</a>
                 <a href="#"><span class="icon-user"></span> My Account</a>
-                <a href="register.html"><span class="icon-edit"></span> Free Register</a>
+                <a href="<c:url value="/dang-nhap/tao-tai-khoan"/> "><span class="icon-edit"></span> Free Register</a>
                 <a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
                 <a href="<c:url value="/trang-chu/gio-hang"/> "><span class="icon-shopping-cart"></span> ${cart.size()} Sản phẩm - <span class="badge badge-warning"> $${totalPrice}</span></a>
             </div>

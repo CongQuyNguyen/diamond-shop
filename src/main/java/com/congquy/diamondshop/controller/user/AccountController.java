@@ -16,8 +16,8 @@ public class AccountController extends BaseController {
 
     @RequestMapping(value = {"/dang-nhap/tao-tai-khoan"}, method = RequestMethod.GET)
     public ModelAndView registerPage() {
-        ModelAndView mav = new ModelAndView("login/register");
-        return mav;
+        _mavShare.setViewName("login/register");
+        return _mavShare;
     }
 
     @RequestMapping(value = {"/dang-nhap/quen-mat-khau"}, method = RequestMethod.GET)
