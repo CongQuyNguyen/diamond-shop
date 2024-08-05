@@ -8,6 +8,7 @@ com\congquy\diamondshop\converter\MenuConverter.class
 com\congquy\diamondshop\repository\ProductRepository.class
 com\congquy\diamondshop\converter\SlidesConverter.class
 com\congquy\diamondshop\entity\CategoryEntity.class
+com\congquy\diamondshop\controller\admin\HomeController.class
 com\congquy\diamondshop\entity\ColorsEntity.class
 com\congquy\diamondshop\dto\AbstractDTO.class
 com\congquy\diamondshop\service\IPaginateService.class
@@ -24,6 +25,7 @@ com\congquy\diamondshop\constant\SystemConstant.class
 com\congquy\diamondshop\controller\user\BaseController.class
 com\congquy\diamondshop\repository\MenuRepository.class
 com\congquy\diamondshop\service\implement\PaginateService.class
+com\congquy\diamondshop\service\implement\UserService.class
 com\congquy\diamondshop\config\JPAConfig.class
 com\congquy\diamondshop\controller\user\ProductController.class
 com\congquy\diamondshop\dto\PaginateDTO.class
@@ -39,6 +41,8 @@ com\congquy\diamondshop\config\JPAAuditingConfig$AuditorAwareImpl.class
 com\congquy\diamondshop\config\JPAAuditingConfig.class
 com\congquy\diamondshop\entity\ProductEntity.class
 com\congquy\diamondshop\entity\RoleEntity.class
+com\congquy\diamondshop\service\IUserService.class
+com\congquy\diamondshop\repository\RoleRepository.class
 com\congquy\diamondshop\dto\ProductDTO.class
 com\congquy\diamondshop\service\ISlidesService.class
 com\congquy\diamondshop\controller\user\CartController.class

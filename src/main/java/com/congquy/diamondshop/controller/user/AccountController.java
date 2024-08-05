@@ -51,11 +51,11 @@ public class AccountController extends BaseController {
                                      Model model) {
         try {
             userService.addUser(email, fullName, password, address);
+            return "redirect:/dang-nhap?success";
         } catch (Exception e) {
             model.addAttribute("error", e.getMessage());
+            return "redirect:/dang-nhap?error";
         }
-        return "redirect:/dang-nhap";
-
     }
 
     @RequestMapping(value = {"/dang-nhap/quen-mat-khau"}, method = RequestMethod.GET)

@@ -20,6 +20,7 @@ D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\implement\
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\repository\ProductRepository.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\utils\SecurityUtils.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\config\JPAAuditingConfig.java
+D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\controller\admin\HomeController.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\repository\MenuRepository.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\implement\CategoryService.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\controller\user\ProductController.java
@@ -33,9 +34,11 @@ D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\dto\SlidesDTO.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\MenuEntity.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\converter\ProductConverter.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\ICartService.java
+D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\implement\UserService.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\controller\user\HomeController.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\dto\AbstractDTO.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\dto\ProductDTO.java
+D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\repository\RoleRepository.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\constant\SystemConstant.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\ColorsEntity.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\controller\user\CartController.java
@@ -45,6 +48,7 @@ D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\dto\CartDTO.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\dto\ColorsDTO.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\BaseEntity.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\RoleEntity.java
+D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\IUserService.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\CategoryEntity.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\UserEntity.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\implement\MenuService.java
