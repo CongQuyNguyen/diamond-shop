@@ -9,6 +9,7 @@ D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\repository\Categor
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\controller\user\BaseController.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\converter\CategoryConverter.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\converter\MenuConverter.java
+D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\security\CustomSuccessHandler.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\implement\PaginateService.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\dto\MenuDTO.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\ProductEntity.java
@@ -17,6 +18,7 @@ D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\IProductSe
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\controller\admin\ProductController.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\implement\SlidesService.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\repository\ProductRepository.java
+D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\utils\SecurityUtils.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\config\JPAAuditingConfig.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\repository\MenuRepository.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\implement\CategoryService.java
@@ -47,3 +49,4 @@ D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\CategoryEnt
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\UserEntity.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\implement\MenuService.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\SlidesEntity.java
+D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\implement\CustomUserDetailsService.java

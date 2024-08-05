@@ -21,7 +21,7 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
             "WHERE p.highlight = :highlight " +
             "GROUP BY p.id, c.id " +
             "ORDER BY RAND() " +
-            "LIMIT 9", nativeQuery = true)
+            "LIMIT 6", nativeQuery = true)
     List<Object[]> findAllByHighlight(@Param("highlight") int highlight);
 
 

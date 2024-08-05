@@ -1,18 +1,45 @@
 package com.congquy.diamondshop.dto;
 
-import java.util.Date;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 
-public class UserDTO extends AbstractDTO<UserDTO> {
+import java.util.Collection;
 
-    private String userName;
+
+public class UserDTO extends User {
+
+    public UserDTO(String username, String password, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired,
+                   boolean accountNonLocked, Collection<? extends GrantedAuthority> authorities) {
+        super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
+    }
 
     private String email;
 
-    private String password;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    private String fullName;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     private String address;
 
-    private Date birthday;
+    public String getFullName() {
+        return fullName;
+    }
 
-
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 }

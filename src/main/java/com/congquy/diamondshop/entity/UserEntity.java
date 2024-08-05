@@ -7,6 +7,10 @@ import java.util.List;
 @Entity
 @Table(name = "user")
 public class UserEntity extends BaseEntity {
+
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "user_name")
     private String userName;
 
@@ -15,6 +19,9 @@ public class UserEntity extends BaseEntity {
 
     @Column(name = "full_name")
     private String fullName;
+
+    @Column(name = "address")
+    private String address;
 
     @Column(name = "status")
     private int status;
@@ -61,5 +68,21 @@ public class UserEntity extends BaseEntity {
 
     public void setRoles(List<RoleEntity> roles) {
         this.roles = roles;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

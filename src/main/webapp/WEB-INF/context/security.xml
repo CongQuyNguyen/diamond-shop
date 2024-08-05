@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+            http://www.springframework.org/schema/security
+            http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+    <http auto-config="false" use-expressions="true" disable-url-rewriting="true">
+
+        <!--Dòng này định nghĩa đường dẫn được bảo vệ, nghĩa là chỉ ROLE ADMIN mới có thể vào-->
+        <intercept-url pattern="/trang-quan-ly" access="hasAnyRole('ADMIN')" />
+        <intercept-url pattern="/dang-ky" access="permitAll()" />
+
+        <access-denied-handler error-page="/accessDenied" />
+
+        <form-login  login-page="/dang-nhap"
+                     username-parameter="j_username"
+                     password-parameter="j_password"
+                     login-processing-url="/j_spring_security_check"
+                     authentication-success-handler-ref="customSuccessHandler"
+                     authentication-failure-url="/dang-nhap?incorrectAccount"/>
+        <!--Hai dòng có url trên và dưới: sẽ chuyển hướng đến trang có url /dang-nhap nếu bị một
+        trong 2 vấn đề đăng nhập sai hoặc hết thời gian chờ-->
+        <!--<session-management invalid-session-url="/dang-nhap?sessionTimeout"/>-->
+
+        <!--Đặt trang chủ làm trang đầu tiên-->
+        <session-management invalid-session-url="/trang-chu"/>
+        <logout delete-cookies="JSESSIONID"/>
+
+    </http>
+
+    <authentication-manager >
+        <authentication-provider user-service-ref="customUserDetailsService">
+            <password-encoder ref="bcryptEncoder"/>
+        </authentication-provider>
+    </authentication-manager>
+
+    <beans:bean id="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+    <beans:bean id="customUserDetailsService" class="com.congquy.diamondshop.service.implement.CustomUserDetailsService" />
+    <beans:bean id="customSuccessHandler" class="com.congquy.diamondshop.security.CustomSuccessHandler" />
+</beans:beans>

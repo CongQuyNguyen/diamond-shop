@@ -1,6 +1,6 @@
 <%@include file="/WEB-INF/views/common/taglib.jsp"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
 <html lang="en">

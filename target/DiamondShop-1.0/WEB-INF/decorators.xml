@@ -12,16 +12,12 @@
         <pattern>/san-pham*</pattern>
     </decorator>
 
-    <decorator name="bai-viet" page="user.jsp">
-        <pattern>/bai-viet*</pattern>
-    </decorator>
-
-    <decorator name="so-sanh" page="user.jsp">
-        <pattern>/so-sanh*</pattern>
-    </decorator>
-
     <decorator name="dang-nhap" page="login.jsp">
         <pattern>/dang-nhap*</pattern>
+    </decorator>
+
+    <decorator name="dang-xuat" page="user.jsp">
+        <pattern>/dang-xuat*</pattern>
     </decorator>
 
 </decorators>
