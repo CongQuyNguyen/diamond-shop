@@ -9,8 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.text.Normalizer;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
+import java.util.regex.Pattern;
 
 @Service
 public class UserService implements IUserService {
@@ -24,11 +28,21 @@ public class UserService implements IUserService {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
+    // Kiểm tra email và code của email đó có hợp lệ hay không
+    private Map<String, String> verificationCodes = new HashMap<>();
+
 
 
     // Hàm tự đề cập user name cho người dùng
+    private String removeAccents(String str) {
+        String normalized = Normalizer.normalize(str, Normalizer.Form.NFD);
+        Pattern pattern = Pattern.compile("\\p{M}");
+        return pattern.matcher(normalized).replaceAll("");
+    }
+
     private String recommendUserName(String fullName) {
-        String[] nameParts = fullName.trim().toLowerCase().split("\\s+");
+        String nameWithoutAccents = removeAccents(fullName.trim().toLowerCase());
+        String[] nameParts = nameWithoutAccents.split("\\s+");
 
         String lastName = nameParts[nameParts.length - 1];
         String firstInitial = nameParts[0].substring(0, 1);
@@ -64,9 +78,31 @@ public class UserService implements IUserService {
         newUser.setUserName(recommendUserName(fullName));
         newUser.setStatus(1);
 
+        // Trước khi email được xác thực thì ng dùng chưa được công nhận
+        // newUser.setStatus(0);
+
         // Gán quyền USER cho người dùng mới
         RoleEntity userRole = roleRepository.findByCode("USER");
         newUser.setRoles(Collections.singletonList(userRole));
         userRepository.save(newUser);
+
+        // Lưu mã xác thực
+        // verificationCodes.put(email, code);
+    }
+
+    public boolean verifyUser(String email, String code) {
+        // Lấy code đã lưu
+        String storedCode = verificationCodes.get(email);
+
+        if (storedCode != null && storedCode.equals(code)) {
+            UserEntity user = userRepository.findOneByEmail(email);
+            if (user != null) {
+                user.setStatus(1);
+                userRepository.save(user);
+                verificationCodes.remove(email);
+                return true;
+            }
+        }
+        return false;
     }
 }

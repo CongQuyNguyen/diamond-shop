@@ -30,6 +30,17 @@ public class UserEntity extends BaseEntity {
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<RoleEntity> roles = new ArrayList<>();
 
+    @OneToMany(mappedBy = "user")
+    List<BillEntity> listBill = new ArrayList<>();
+
+    public List<BillEntity> getListBill() {
+        return listBill;
+    }
+
+    public void setListBill(List<BillEntity> listBill) {
+        this.listBill = listBill;
+    }
+
     public String getUserName() {
         return userName;
     }

@@ -1,6 +1,6 @@
 package com.congquy.diamondshop.dto;
 
-public class CartDTO {
+public class CartDTO extends AbstractDTO<CartDTO> {
 
     private ProductDTO productDetail;
 

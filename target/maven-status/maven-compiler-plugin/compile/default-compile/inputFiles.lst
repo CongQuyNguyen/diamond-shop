@@ -5,6 +5,7 @@ D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\config\JPAConfig.j
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\controller\user\AccountController.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\dto\CategoryDTO.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\converter\SlidesConverter.java
+D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\implement\EmailService.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\repository\CategoryRepository.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\controller\user\BaseController.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\converter\CategoryConverter.java

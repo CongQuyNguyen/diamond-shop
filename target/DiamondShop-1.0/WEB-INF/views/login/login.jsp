@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div class="controls">
-                        <button type="submit" class="btn block">Tạo tài khoản</button>
+                        <button type="submit" class="btn block" href="">Tạo tài khoản</button>
                     </div>
                 </form>
             </div>

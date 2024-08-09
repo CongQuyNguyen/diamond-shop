@@ -56,7 +56,7 @@ public class JPAConfig {
     @Bean
     public Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "none");
+        properties.setProperty("hibernate.hbm2ddl.auto", "update");
         properties.setProperty("hibernate.connection.characterEncoding", "utf8mb4");
         properties.setProperty("hibernate.connection.useUnicode", "true");
         properties.setProperty("hibernate.connection.CharSet", "utf8mb4");

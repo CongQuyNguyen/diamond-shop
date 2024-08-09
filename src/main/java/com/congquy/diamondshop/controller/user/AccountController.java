@@ -21,6 +21,7 @@ public class AccountController extends BaseController {
     @Autowired
     private UserService userService;
 
+
     @RequestMapping(value = {"/dang-nhap"}, method = RequestMethod.GET)
     public ModelAndView loginPage() {
         _mavShare.setViewName("login/login");
@@ -51,16 +52,10 @@ public class AccountController extends BaseController {
                                      Model model) {
         try {
             userService.addUser(email, fullName, password, address);
-            return "redirect:/dang-nhap?success";
+            return "redirect:/dang-nhap";
         } catch (Exception e) {
             model.addAttribute("error", e.getMessage());
-            return "redirect:/dang-nhap?error";
+            return "redirect:/dang-nhap";
         }
-    }
-
-    @RequestMapping(value = {"/dang-nhap/quen-mat-khau"}, method = RequestMethod.GET)
-    public ModelAndView forgotPassPage() {
-        ModelAndView mav = new ModelAndView("login/forgot-password");
-        return mav;
     }
 }

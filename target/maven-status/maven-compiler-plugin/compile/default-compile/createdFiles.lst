@@ -53,5 +53,6 @@ com\congquy\diamondshop\converter\CategoryConverter.class
 com\congquy\diamondshop\service\implement\ProductService.class
 com\congquy\diamondshop\controller\user\CategoryController.class
 com\congquy\diamondshop\security\CustomSuccessHandler.class
+com\congquy\diamondshop\service\implement\EmailService.class
 com\congquy\diamondshop\entity\SlidesEntity.class
 com\congquy\diamondshop\dto\CartDTO.class

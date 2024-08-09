@@ -8,6 +8,9 @@ import java.util.List;
 @Table(name = "product")
 public class ProductEntity extends BaseEntity {
 
+    @OneToMany(mappedBy = "product")
+    List<BillDetailEntity> listBillDetail = new ArrayList<>();
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private CategoryEntity category;
@@ -103,6 +106,14 @@ public class ProductEntity extends BaseEntity {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public List<BillDetailEntity> getListBillDetail() {
+        return listBillDetail;
+    }
+
+    public void setListBillDetail(List<BillDetailEntity> listBillDetail) {
+        this.listBillDetail = listBillDetail;
     }
 
     @Column(name = "name")

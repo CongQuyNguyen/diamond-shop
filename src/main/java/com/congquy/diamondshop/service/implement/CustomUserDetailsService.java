@@ -44,6 +44,9 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         /* Lấy fullname từ sesstion (là userEntity) */
         myUser.setFullName(userEntity.getFullName());
+        myUser.setAddress(userEntity.getAddress());
+        myUser.setEmail(userEntity.getEmail());
+        myUser.setId(userEntity.getId());
         return myUser;
     }
 

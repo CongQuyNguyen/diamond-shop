@@ -32,28 +32,12 @@
                         <a href="index.html">${item.name}</a></li>
                     </c:forEach>
                 </ul>
-                <form action="#" class="navbar-search pull-left">
-                    <input type="text" placeholder="Search" class="search-query span2">
-                </form>
-                <ul class="nav pull-right">
+
+                <ul class="nav pull-right" style="margin-right: 10px">
                     <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
-                        <div class="dropdown-menu">
-                            <form class="form-horizontal loginFrm">
-                                <div class="control-group">
-                                    <input type="text" class="span2" id="inputEmail" placeholder="Email">
-                                </div>
-                                <div class="control-group">
-                                    <input type="password" class="span2" id="inputPassword" placeholder="Password">
-                                </div>
-                                <div class="control-group">
-                                    <label class="checkbox">
-                                        <input type="checkbox"> Remember me
-                                    </label>
-                                    <button type="submit" class="shopBtn btn-block">Sign in</button>
-                                </div>
-                            </form>
-                        </div>
+                        <form action="#" class="navbar-search pull-left">
+                            <input type="text" placeholder="Search" class="search-query span2">
+                        </form>
                     </li>
                 </ul>
             </div>

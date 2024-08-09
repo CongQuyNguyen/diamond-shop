@@ -15,7 +15,7 @@
 <body>
 <div class="span9">
     <ul class="breadcrumb">
-        <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+        <li><a href="<c:url value="/trang-chu"/>">Home</a> <span class="divider">/</span></li>
         <li class="active">Check Out</li>
     </ul>
     <div class="well well-small">
@@ -57,8 +57,15 @@
             </tbody>
         </table><br/>
 
-        <a href="products.html" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Tiếp tục mua sắm </a>
-        <a href="login.html" class="shopBtn btn-large pull-right">Thanh toán <span class="icon-arrow-right"></span></a>
+        <a href="<c:url value="/trang-chu"/>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Tiếp tục mua sắm </a>
+        <%--Nếu đã đăng nhập thì đi đến thanh toán, còn kh thì phải đăng nhập--%>
+        <security:authorize access="isAuthenticated()">
+            <a href="<c:url value="/trang-chu/thanh-toan"/> " class="shopBtn btn-large pull-right">Thanh toán <span class="icon-arrow-right"></span></a>
+        </security:authorize>
+
+        <security:authorize access="isAnonymous()">
+            <a href="<c:url value="/dang-nhap"/> " class="shopBtn btn-large pull-right">Thanh toán <span class="icon-arrow-right"></span></a>
+        </security:authorize>
 
     </div>
 </div>
