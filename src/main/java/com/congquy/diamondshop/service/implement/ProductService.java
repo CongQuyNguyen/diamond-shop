@@ -50,4 +50,14 @@ public class ProductService implements IProductService {
     public ProductDTO getProductById(Long id) {
         return productConverter.toDTO(productRepository.findOne(id));
     }
+
+    @Override
+    public List<ProductDTO> getAllProduct() {
+        List<ProductEntity> entities = productRepository.findAll();
+        List<ProductDTO> result = new ArrayList<>();
+        for(ProductEntity entity : entities) {
+            result.add(productConverter.toDTO(entity));
+        }
+        return result;
+    }
 }

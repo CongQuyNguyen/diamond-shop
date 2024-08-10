@@ -22,4 +22,10 @@ public class HomeController extends BaseController {
         _mavShare.addObject("productsHighlight", productService.getProductByHighlightProduct(SystemConstant.HIGHLIGHT_PRODUCT));
         return _mavShare;
     }
+
+    @RequestMapping(value = {"/thong-tin-lien-he"}, method = RequestMethod.GET)
+    public ModelAndView contactPage() {
+        _mavShare.setViewName("user/contact");
+        return _mavShare;
+    }
 }

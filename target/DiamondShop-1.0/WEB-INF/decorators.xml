@@ -12,6 +12,10 @@
         <pattern>/san-pham*</pattern>
     </decorator>
 
+    <decorator name="danh-sach-san-pham" page="user.jsp">
+        <pattern>/danh-sach-san-pham*</pattern>
+    </decorator>
+
     <decorator name="dang-nhap" page="login.jsp">
         <pattern>/dang-nhap*</pattern>
     </decorator>
@@ -22,6 +26,10 @@
 
     <decorator name="dang-xuat" page="user.jsp">
         <pattern>/dang-xuat*</pattern>
+    </decorator>
+
+    <decorator name="thong-tin-lien-he" page="login.jsp">
+        <pattern>/thong-tin-lien-he*</pattern>
     </decorator>
 
 </decorators>

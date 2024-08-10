@@ -14,4 +14,6 @@ public interface IProductService {
     List<ProductDTO> getProductByPagination(int start, int totalPage, Long id);
 
     ProductDTO getProductById(Long id);
+
+    List<ProductDTO> getAllProduct();
 }

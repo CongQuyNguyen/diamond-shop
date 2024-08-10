@@ -26,4 +26,11 @@ public class ProductController extends BaseController {
         _mavShare.addObject("productByCategory", productService.getProductByCategory(idCategory));
         return _mavShare;
     }
+
+    @RequestMapping(value = {"/danh-sach-san-pham"}, method = RequestMethod.GET)
+    public ModelAndView listProductPage() {
+        _mavShare.setViewName("user/list-produdct");
+        _mavShare.addObject("listProduct", productService.getAllProduct());
+        return _mavShare;
+    }
 }
