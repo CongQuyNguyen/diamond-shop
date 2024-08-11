@@ -18,7 +18,7 @@
         <li><a href="index.html">Home</a> <span class="divider">/</span></li>
         <li class="active">Login</li>
     </ul>
-    <h3> Login</h3>
+    <h3>Login</h3>
     <hr class="soft"/>
 
     <c:if test="${param.incorrectAccount != null}">
@@ -31,37 +31,64 @@
             Bạn không có quyền truy cập
         </div>
     </c:if>
+
+    <c:if test="${not empty error}">
+        <div class="alert alert-danger">
+                ${error}
+        </div>
+    </c:if>
+
+    <c:if test="${not empty success}">
+        <div class="alert alert-success">
+                ${success}
+        </div>
+    </c:if>
+
     <div class="row">
         <div class="span5">
             <div class="well">
                 <h5>Đăng ký nếu chưa có tài khoản</h5>
-                <form action="/dang-ky" method="post">
+
+                <!-- Form gửi mã xác thực -->
+                <form action="/xac-thuc" method="post">
                     <div class="control-group">
                         <label class="control-label">E-mail</label>
                         <div class="controls">
-                            <input class="span4" name="email" type="text" placeholder="Email">
+                            <input class="span4" name="email" type="text" placeholder="Email" value="${param.email}" required>
+                            <button type="submit" class="btn block">Gửi mã xác thực</button>
                         </div>
                     </div>
+                </form>
+
+                <!-- Form đăng ký -->
+                <form action="/dang-ky" method="post">
+                    <input type="hidden" name="email" value="${param.email}">
                     <div class="control-group">
                         <label class="control-label">Họ và tên</label>
                         <div class="controls">
-                            <input class="span4" name="fullName" type="text" placeholder="Full name">
+                            <input class="span4" name="fullName" type="text" placeholder="Full name" required>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Mật khẩu</label>
                         <div class="controls">
-                            <input class="span4" name="password" type="password" placeholder="Password">
+                            <input class="span4" name="password" type="password" placeholder="Password" required>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Địa chỉ</label>
                         <div class="controls">
-                            <input class="span4" name="address" type="text" placeholder="Address">
+                            <input class="span4" name="address" type="text" placeholder="Address" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Mã xác thực</label>
+                        <div class="controls">
+                            <input class="span4" name="code" type="text" placeholder="Nhập mã xác thực" required>
                         </div>
                     </div>
                     <div class="controls">
-                        <button type="submit" class="btn block" href="">Tạo tài khoản</button>
+                        <button type="submit" class="btn block">Tạo tài khoản</button>
                     </div>
                 </form>
             </div>
@@ -69,12 +96,12 @@
         <div class="span2"> &nbsp;</div>
         <div class="span5">
             <div class="well">
-                <h5>Bạn đã có tài khoản ?</h5>
+                <h5>Bạn đã có tài khoản?</h5>
                 <form action="/j_spring_security_check" method="post" id="formLogin">
                     <div class="control-group">
                         <label class="control-label">Tên đăng nhập</label>
                         <div class="controls">
-                            <input class="span4"  type="text" placeholder="Username" id="username" name="j_username">
+                            <input class="span4" type="text" placeholder="Username" id="username" name="j_username">
                         </div>
                     </div>
                     <div class="control-group">
@@ -93,7 +120,6 @@
             </div>
         </div>
     </div>
-
 </div>
 </body>
 </html>

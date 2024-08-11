@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @Controller(value = "accountControllerOfUser")
 public class AccountController extends BaseController {
@@ -22,7 +24,7 @@ public class AccountController extends BaseController {
     private UserService userService;
 
 
-    @RequestMapping(value = {"/dang-nhap"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/dang-nhap", "/dang-ky"}, method = RequestMethod.GET)
     public ModelAndView loginPage() {
         _mavShare.setViewName("login/login");
         return _mavShare;
@@ -44,18 +46,32 @@ public class AccountController extends BaseController {
         return _mavShare;
     }
 
-    @RequestMapping(value = {"/dang-ky"}, method = RequestMethod.POST)
-    public String registerPage(@RequestParam("email") String email,
-                                     @RequestParam("fullName") String fullName,
-                                     @RequestParam("password") String password,
-                                     @RequestParam("address") String address,
-                                     Model model) {
+    @RequestMapping(value = "/xac-thuc", method = RequestMethod.POST)
+    public String sendVerificationCode(@RequestParam("email") String email, HttpSession session, Model model) {
         try {
-            userService.addUser(email, fullName, password, address);
-            return "redirect:/dang-nhap";
+            String code = userService.generateAndSendVerificationCode(email);
+            session.setAttribute("email", email); // Lưu email vào session
+            model.addAttribute("success", "Verify code is send for you.");
         } catch (Exception e) {
             model.addAttribute("error", e.getMessage());
+        }
+        return "redirect:/dang-ky";
+    }
+
+    @RequestMapping(value = {"/dang-ky"}, method = RequestMethod.POST)
+    public String registerPage(@RequestParam("email") String email,
+                               @RequestParam("fullName") String fullName,
+                               @RequestParam("password") String password,
+                               @RequestParam("address") String address,
+                               @RequestParam("code") String code,
+                               HttpSession session, Model model) {
+        email = session.getAttribute("email").toString();
+        if (userService.verifyUser(email, code)) {
+            userService.addUser(email, fullName, password, address);
             return "redirect:/dang-nhap";
+        } else {
+            model.addAttribute("error", "Incorrect code.");
+            return "redirect:/dang-ky";
         }
     }
 }

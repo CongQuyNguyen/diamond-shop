@@ -6,6 +6,8 @@ import com.congquy.diamondshop.repository.RoleRepository;
 import com.congquy.diamondshop.repository.UserRepository;
 import com.congquy.diamondshop.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +29,9 @@ public class UserService implements IUserService {
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
+
+    @Autowired
+    private JavaMailSender mailSender;
 
     // Kiểm tra email và code của email đó có hợp lệ hay không
     private Map<String, String> verificationCodes = new HashMap<>();
@@ -78,16 +83,10 @@ public class UserService implements IUserService {
         newUser.setUserName(recommendUserName(fullName));
         newUser.setStatus(1);
 
-        // Trước khi email được xác thực thì ng dùng chưa được công nhận
-        // newUser.setStatus(0);
-
         // Gán quyền USER cho người dùng mới
         RoleEntity userRole = roleRepository.findByCode("USER");
         newUser.setRoles(Collections.singletonList(userRole));
         userRepository.save(newUser);
-
-        // Lưu mã xác thực
-        // verificationCodes.put(email, code);
     }
 
     public boolean verifyUser(String email, String code) {
@@ -95,14 +94,32 @@ public class UserService implements IUserService {
         String storedCode = verificationCodes.get(email);
 
         if (storedCode != null && storedCode.equals(code)) {
-            UserEntity user = userRepository.findOneByEmail(email);
-            if (user != null) {
-                user.setStatus(1);
-                userRepository.save(user);
-                verificationCodes.remove(email);
-                return true;
-            }
+            return true;
         }
         return false;
+    }
+
+    public String generateAndSendVerificationCode(String email) {
+        if (userRepository.findOneByEmail(email) != null) {
+            throw new RuntimeException("Email đã tồn tại!");
+        }
+
+        String code = String.format("%06d", new Random().nextInt(999999));
+
+        verificationCodes.put(email, code);
+
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(email);
+        message.setSubject("Account Registration Verification Code");
+        message.setText("Dear User,\n\n" +
+                "Thank you for registering with our service. To complete your registration, please use the verification code provided below:\n\n" +
+                "Verification Code: " + code + "\n\n" +
+                "If you did not request this code, please ignore this email.\n\n" +
+                "Best regards,\n" +
+                "The Diamond Shop");
+
+        mailSender.send(message);
+
+        return code;
     }
 }

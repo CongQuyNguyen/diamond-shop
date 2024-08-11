@@ -1,12 +1,17 @@
 package com.congquy.diamondshop.controller.user;
 
-import com.congquy.diamondshop.dto.ColorsDTO;
+import com.congquy.diamondshop.constant.SystemConstant;
+import com.congquy.diamondshop.dto.ProductDTO;
 import com.congquy.diamondshop.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller(value = "productControllerOfUser")
@@ -28,9 +33,14 @@ public class ProductController extends BaseController {
     }
 
     @RequestMapping(value = {"/danh-sach-san-pham"}, method = RequestMethod.GET)
-    public ModelAndView listProductPage() {
-        _mavShare.setViewName("user/list-produdct");
-        _mavShare.addObject("listProduct", productService.getAllProduct());
+    public ModelAndView listProductPage(@RequestParam(value = "page", defaultValue = "1") int page) {
+        _mavShare.setViewName("user/list-product");
+        Pageable pageable = new PageRequest(page - 1, SystemConstant.LIMIT_ITEM_IN_PAGE_LIST);
+        Page<ProductDTO> productPage = productService.getAllProductPaging(pageable);
+
+        _mavShare.addObject("listProduct", productPage.getContent());
+        _mavShare.addObject("totalPage", productPage.getTotalPages());
+        _mavShare.addObject("currentPage", page);
         return _mavShare;
     }
 }

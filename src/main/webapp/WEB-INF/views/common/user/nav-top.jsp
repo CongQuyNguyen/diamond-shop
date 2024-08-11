@@ -35,7 +35,7 @@
                             <a href="<c:url value="/trang-chu"/> ">${item.name}</a></li>
                         </c:if>
                         <c:if test="${item.code == 'san-pham'}">
-                            <a href="<c:url value="/danh-sach-san-pham"/> ">${item.name}</a></li>
+                            <a href="<c:url value="/danh-sach-san-pham?page=1"/> ">${item.name}</a></li>
                         </c:if>
                         <c:if test="${item.code == 'so-sanh'}">
                             <a href="<c:url value="/#"/> ">${item.name}</a></li>

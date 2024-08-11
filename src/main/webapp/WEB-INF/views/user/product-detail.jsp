@@ -24,11 +24,15 @@
             <div class="span5">
                 <div id="myCarousel" class="carousel slide cntr">
                     <div class="carousel-inner">
-                        <c:forEach var="item" items="${productDetail.colors}" varStatus="loop">
+                        <%-- Để tạm 1 ảnh ở đây --%>
+                        <div class="item active">
+                            <a href="#"> <img src="<c:url value="/template/assets/img/${productDetail.colors.get(0).image}"/>" alt="" style="width:100%"></a>
+                        </div>
+                        <%--<c:forEach var="item" items="${productDetail.colors}" varStatus="loop">
                             <div class="item active">
                                 <a href="#"> <img src="<c:url value="/template/assets/img/${item.image}"/>" alt="" style="width:100%"></a>
                             </div>
-                        </c:forEach>
+                        </c:forEach>--%>
                     </div>
                     <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
                     <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>

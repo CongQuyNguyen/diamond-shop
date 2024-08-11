@@ -6,6 +6,8 @@ import com.congquy.diamondshop.entity.ProductEntity;
 import com.congquy.diamondshop.repository.ProductRepository;
 import com.congquy.diamondshop.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -59,5 +61,12 @@ public class ProductService implements IProductService {
             result.add(productConverter.toDTO(entity));
         }
         return result;
+    }
+
+    @Override
+    public Page<ProductDTO> getAllProductPaging(Pageable pageable) {
+        Page<ProductEntity> pageEntity = productRepository.findAll(pageable);
+        Page<ProductDTO> pageDTO = pageEntity.map(entity -> productConverter.toDTO(entity));
+        return pageDTO;
     }
 }
