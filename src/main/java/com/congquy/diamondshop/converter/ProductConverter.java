@@ -2,6 +2,7 @@ package com.congquy.diamondshop.converter;
 
 import com.congquy.diamondshop.dto.ColorsDTO;
 import com.congquy.diamondshop.dto.ProductDTO;
+import com.congquy.diamondshop.entity.CategoryEntity;
 import com.congquy.diamondshop.entity.ColorsEntity;
 import com.congquy.diamondshop.entity.ProductEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,6 +80,37 @@ public class ProductConverter {
         }
 
         return productDTOList;
+    }
+
+    public ProductEntity toEntity(ProductDTO productDTO) {
+        ProductEntity productEntity = new ProductEntity();
+
+        // Set category if it exists
+        if (productDTO.getCategoryId() != null) {
+            CategoryEntity category = new CategoryEntity();
+            category.setId(productDTO.getCategoryId());
+            productEntity.setCategory(category);
+        }
+
+        // Set colors if they exist
+        if (productDTO.getColors() != null) {
+            productEntity.setColors(colorsConverter.toEntity(productDTO.getColors()));
+        }
+
+        productEntity.setName(productDTO.getName());
+        productEntity.setPrice(productDTO.getPrice());
+        productEntity.setSize(productDTO.getSize());
+        productEntity.setHighlight(productDTO.getHighlight());
+        productEntity.setNewProduct(productDTO.getNewProduct());
+        productEntity.setSale(productDTO.getSale());
+        productEntity.setQuantity(productDTO.getQuantity());
+        productEntity.setDescription(productDTO.getDescription());
+        productEntity.setContent(productDTO.getContent());
+
+        productEntity.setId(productDTO.getId());
+        productEntity.setCreatedBy(productDTO.getCreatedBy());
+        productEntity.setCreatedDate(productDTO.getCreatedDate());
+        return productEntity;
     }
 
 }

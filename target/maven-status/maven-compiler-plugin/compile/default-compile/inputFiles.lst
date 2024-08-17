@@ -20,6 +20,7 @@ D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\dto\MenuDTO.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\entity\ProductEntity.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\IPaginateService.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\IProductService.java
+D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\api\admin\ProductAPI.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\config\MailSenderConfig.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\controller\admin\ProductController.java
 D:\DEMO_MVC\DiamondShop\src\main\java\com\congquy\diamondshop\service\implement\SlidesService.java

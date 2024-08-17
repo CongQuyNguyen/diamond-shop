@@ -20,4 +20,10 @@ public interface IProductService {
     List<ProductDTO> getAllProduct();
 
     Page<ProductDTO> getAllProductPaging(Pageable pageable);
+
+    ProductDTO saveProduct(ProductDTO product);
+
+    ProductDTO updateProduct(ProductDTO newProduct);
+
+    void deleteProduct(Long id);
 }

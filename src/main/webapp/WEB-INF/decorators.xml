@@ -4,6 +4,10 @@
         <pattern>/api*</pattern>
     </excludes>
 
+    <decorator name="trang-quan-tri" page="admin.jsp">
+        <pattern>/trang-quan-tri*</pattern>
+    </decorator>
+
     <decorator name="trang-chu" page="user.jsp">
         <pattern>/trang-chu*</pattern>
     </decorator>
@@ -24,9 +28,9 @@
         <pattern>/dang-ky*</pattern>
     </decorator>
 
-    <decorator name="dang-xuat" page="user.jsp">
-        <pattern>/dang-xuat*</pattern>
-    </decorator>
+<!--    <decorator name="dang-xuat" page="user.jsp">-->
+<!--        <pattern>/dang-xuat*</pattern>-->
+<!--    </decorator>-->
 
     <decorator name="thong-tin-lien-he" page="login.jsp">
         <pattern>/thong-tin-lien-he*</pattern>

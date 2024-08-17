@@ -50,7 +50,7 @@
                 <h5>Đăng ký nếu chưa có tài khoản</h5>
 
                 <!-- Form gửi mã xác thực -->
-                <form action="/xac-thuc" method="post">
+                <form action="/dang-ky/xac-thuc" method="post">
                     <div class="control-group">
                         <label class="control-label">E-mail</label>
                         <div class="controls">

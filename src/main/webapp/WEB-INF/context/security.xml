@@ -10,7 +10,7 @@
     <http auto-config="false" use-expressions="true" disable-url-rewriting="true">
 
         <!--Dòng này định nghĩa đường dẫn được bảo vệ, nghĩa là chỉ ROLE ADMIN mới có thể vào-->
-        <intercept-url pattern="/trang-quan-ly" access="hasAnyRole('ADMIN')" />
+        <intercept-url pattern="/trang-quan-tri" access="hasAnyRole('ADMIN')" />
         <intercept-url pattern="/dang-ky" access="permitAll()" />
 
         <access-denied-handler error-page="/accessDenied" />

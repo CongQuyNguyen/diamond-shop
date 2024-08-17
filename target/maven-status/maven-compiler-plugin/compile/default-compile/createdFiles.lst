@@ -55,6 +55,7 @@ com\congquy\diamondshop\converter\BillDetailConverter.class
 com\congquy\diamondshop\service\IUserService.class
 com\congquy\diamondshop\repository\RoleRepository.class
 com\congquy\diamondshop\dto\ProductDTO.class
+com\congquy\diamondshop\api\admin\ProductAPI.class
 com\congquy\diamondshop\dto\UserModel.class
 com\congquy\diamondshop\service\ISlidesService.class
 com\congquy\diamondshop\controller\user\CartController.class

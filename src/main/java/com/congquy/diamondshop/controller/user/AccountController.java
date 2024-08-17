@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -46,32 +45,34 @@ public class AccountController extends BaseController {
         return _mavShare;
     }
 
-    @RequestMapping(value = "/xac-thuc", method = RequestMethod.POST)
-    public String sendVerificationCode(@RequestParam("email") String email, HttpSession session, Model model) {
+    @RequestMapping(value = "/dang-ky/xac-thuc", method = RequestMethod.POST)
+    public ModelAndView sendVerificationCode(@RequestParam("email") String email, HttpSession session) {
+        _mavShare.setViewName("login/login");
         try {
             String code = userService.generateAndSendVerificationCode(email);
             session.setAttribute("email", email); // Lưu email vào session
-            model.addAttribute("success", "Verify code is send for you.");
+            _mavShare.addObject("success", "Mã xác minh đã được gửi.");
         } catch (Exception e) {
-            model.addAttribute("error", e.getMessage());
+            _mavShare.addObject("error", e.getMessage());
         }
-        return "redirect:/dang-ky";
+        return _mavShare;
     }
 
     @RequestMapping(value = {"/dang-ky"}, method = RequestMethod.POST)
-    public String registerPage(@RequestParam("email") String email,
+    public ModelAndView registerPage(@RequestParam("email") String email,
                                @RequestParam("fullName") String fullName,
                                @RequestParam("password") String password,
                                @RequestParam("address") String address,
                                @RequestParam("code") String code,
-                               HttpSession session, Model model) {
+                               HttpSession session) {
+        _mavShare.setViewName("login/login");
         email = session.getAttribute("email").toString();
         if (userService.verifyUser(email, code)) {
             userService.addUser(email, fullName, password, address);
-            return "redirect:/dang-nhap";
+            _mavShare.setViewName("redirect:/dang-nhap");
         } else {
-            model.addAttribute("error", "Incorrect code.");
-            return "redirect:/dang-ky";
+            _mavShare.addObject("error", "Mã xác minh hoặc email không hợp lệ.");
         }
+        return _mavShare;
     }
 }
